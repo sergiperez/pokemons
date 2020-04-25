@@ -19,10 +19,18 @@ Uns pokemons han invadit una màquina. Heu de:
    - El byte de host correspon a l'edat que ha fet aquesta setmana un dels professors que és la mateixa que farà l'altre professor a la tardor.
 2. Saber quins ports té oberta la màquina.
 3. Copiar els pokemons. Té tants pokemons com ports té oberts. Els pokemons es diuen com el port obert. Per exemple port 10000.
-   - Instrucció per copiar ```bash=  scp -P 22 pikachu@IPTROBADA:/home/pikachu/10000.txt /vagrant_data/10000.txt```
+   - Instrucció per copiar 
+   ```bash=
+   scp -P 22 pikachu@IPTROBADA:/home/pikachu/10000.txt /vagrant_data/10000.txt
+   ```
    - Quin és el password de pikachu? Un bon profe de xarxes el sap, és el nostre clàssic password.
    
-Per començar amb l'exercici, accediu a la carpeta pokemons i feu:
+Per començar amb l'exercici,accediu a la carpeta pokemons i feu:
+- Linux
 ```bash=
 ./sample.sh
+```
+- Windows 
+```batch=
+sample.bat
 ```
