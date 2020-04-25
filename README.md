@@ -22,9 +22,7 @@ Uns pokemons han invadit una màquina. Heu de:
    - Instrucció per copiar ```bash=  scp -P 22 pikachu@IPTROBADA:/home/pikachu/10000.txt /vagrant_data/10000.txt```
    - Quin és el password de pikachu? Un bon profe de xarxes el sap, és el nostre clàssic password.
    
-Per començar amb l'exercici, accediu a la carpeta sample i feu:
+Per començar amb l'exercici, accediu a la carpeta pokemons i feu:
 ```bash=
-cd sample
-chmod a start.sh
-./start.sh
+./sample.sh
 ```
