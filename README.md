@@ -21,3 +21,10 @@ Uns pokemons han invadit una màquina. Heu de:
 3. Copiar els pokemons. Té tants pokemons com ports té oberts. Els pokemons es diuen com el port obert. Per exemple port 10000.
    - Instrucció per copiar ```bash=  scp -P 22 pikachu@IPTROBADA:/home/pikachu/10000.txt /vagrant_data/10000.txt```
    - Quin és el password de pikachu? Un bon profe de xarxes el sap, és el nostre clàssic password.
+   
+Per començar amb l'exercici, accediu a la carpeta sample i feu:
+```bash=
+cd sample
+chmod a start.sh
+./start.sh
+```
