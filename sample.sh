@@ -25,5 +25,6 @@ vagrant up
 #rm vagrantout.txt
 rm vagrant_data/pikachu
 rm script.sh
+rm -fr ../sample
 #Iniciar hunter
 vagrant ssh teamRocket
