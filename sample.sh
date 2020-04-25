@@ -18,9 +18,9 @@ then
     mkdir vagrant_data
 fi
 #Iniciar laboratori
-cp sample/pikachu vagrant_data/pikachu
-cp sample/script.sh script.sh
-cp sample/Vagrantfile Vagrantfile
+cp ../sample/pikachu vagrant_data/pikachu
+cp ../sample/script.sh script.sh
+cp ../sample/Vagrantfile Vagrantfile
 vagrant up
 #rm vagrantout.txt
 rm vagrant_data/pikachu
