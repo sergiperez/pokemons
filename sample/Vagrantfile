@@ -1,0 +1,40 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+BOX="ubuntu/trusty64"
+IP=["192.168.110.1"]
+MAC=["AABBCCDDEEFF"]
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+  (0..(IP.count-1)).each do |i|
+    config.vm.define "pk#{i}" do |subconfig|
+      subconfig.vm.box = BOX
+      subconfig.vm.network "private_network", ip: IP[i], mac: MAC[i]
+      subconfig.vm.provider "virtualbox" do |v|
+         v.memory = 256
+      end
+      subconfig.vm.provision "shell" do |s|
+        s.path = "script.sh"
+        s.args = [i,rand(10135..10270),rand(10135..10270),rand(10135..10270),rand(10135..10270)]
+      end
+    end
+  end
+  config.vm.define "teamRocket" do |subconfig|
+    subconfig.vm.box = BOX
+    subconfig.vm.network "private_network", ip: "192.168.110.2"
+    subconfig.vm.provider "virtualbox" do |v|
+      v.memory = 256 
+    end
+    subconfig.vm.synced_folder "vagrant_data", "/vagrant_data"
+    subconfig.vm.provision "shell", inline:"cp /vagrant_data/pikachu /etc/motd"
+  end
+end
