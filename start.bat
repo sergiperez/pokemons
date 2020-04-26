@@ -9,7 +9,7 @@ copy ..\sample\pikachu vagrant_data\pikachu
 copy ..\sample\script.sh script.sh
 copy ..\sample\Vagrantfile Vagrantfile
 vagrant up
+del script.sh
 cd vagrant_data
 del pikachu
-del script.sh
 vagrant ssh teamRocket
