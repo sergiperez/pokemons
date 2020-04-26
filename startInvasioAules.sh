@@ -1,9 +1,7 @@
 #!/bin/bash
-#Es dóna per suposat que hi ha Virtualbox com a proveïdor de màquines virtuals
-#Cal instal·lar Vagrant?
 #Creem carpeta pokemon i accedim
-mkdir pokemonSample
-cd pokemonSample
+mkdir invasioAulesPokemon
+cd invasioAulesPokemon
 #Cal baixar box?
 if [ `(vagrant box list | grep ubuntu/trusty64 | wc -l)`  -eq 0 ] ;
 then
@@ -17,14 +15,12 @@ if [ ! -d "vagrant_data" ];
 then
     mkdir vagrant_data
 fi
+#Copiar
+cp ../pikachu vagrant_data/pikachu
+cp ../script.sh .
+cp ../Vagrantfile .
 #Iniciar laboratori
-cp ../sample/pikachu vagrant_data/pikachu
-cp ../sample/script.sh script.sh
-cp ../sample/Vagrantfile Vagrantfile
 vagrant up >> vagrantout.txt
 rm vagrantout.txt
-#rm vagrant_data/pikachu
-#rm script.sh
-#rm -fr ../sample
 #Iniciar hunter
 vagrant ssh teamRocket

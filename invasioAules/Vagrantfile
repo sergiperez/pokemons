@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+BOX="ubuntu/trusty64"
+IP=["192.168.10.29","192.168.10.11","192.168.10.148","192.168.10.21","192.168.10.250","192.168.10.166"]
+MAC=["AABBCCDDEEFF","AABBCCDDEEFE","AABBCCDDEEFD","AABBCCDDEEFC","AABBCCDDEEFB","AABBCCDDEEFA","AABBCCDDEEF0"]
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+  (0..(IP.count-1)).each do |i|
+    config.vm.define "pk#{i}" do |subconfig|
+      subconfig.vm.box = BOX
+      subconfig.vm.network "private_network", ip: IP[i], mac: MAC[i]
+      subconfig.vm.provision "shell" do |s|
+        s.path = "script.sh"
+        s.args = [i,rand(10135..10270),rand(10135..10270),rand(10135..10270),rand(10135..10270)]
+      end
+    end
+  end
+  config.vm.define "teamRocket" do |subconfig|
+    subconfig.vm.box = BOX
+    subconfig.vm.network "private_network", ip: "192.168.10.2"
+    subconfig.vm.synced_folder "vagrant_data", "/vagrant_data"
+    subconfig.vm.provision "shell", inline:"wget -q --no-check-certificate https://gist.githubusercontent.com/sergiperez/2156262d1fcdc1a6463be7558e04ecfc/raw/72117f625717515a50678807b39d0002a4d6719b/pikachu -O /etc/motd"
+  end
+end
