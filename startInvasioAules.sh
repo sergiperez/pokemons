@@ -16,9 +16,9 @@ then
     mkdir vagrant_data
 fi
 #Copiar
-cp ../pikachu vagrant_data/pikachu
-cp ../script.sh .
-cp ../Vagrantfile .
+cp ../invasioAules/pikachu vagrant_data/pikachu
+cp ../invasioAules/script.sh .
+cp ../invasioAules/Vagrantfile .
 #Iniciar laboratori
 vagrant up >> vagrantout.txt
 rm vagrantout.txt

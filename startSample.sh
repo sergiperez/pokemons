@@ -2,8 +2,8 @@
 #Es dóna per suposat que hi ha Virtualbox com a proveïdor de màquines virtuals
 #Cal instal·lar Vagrant?
 #Creem carpeta pokemon i accedim
-mkdir pokemonSample
-cd pokemonSample
+mkdir samplePokemon
+cd samplePokemon
 #Cal baixar box?
 if [ `(vagrant box list | grep ubuntu/trusty64 | wc -l)`  -eq 0 ] ;
 then
