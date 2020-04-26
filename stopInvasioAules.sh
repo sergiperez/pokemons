@@ -1,5 +1,5 @@
 cd invasioAulesPokemon
 vagrant halt
-vagrant -f destroy
+vagrant destroy -f
 cd ..
 rm -fr invasioAulesPokemon

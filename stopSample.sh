@@ -1,5 +1,5 @@
 cd samplePokemon
 vagrant halt
-vagrant -f destroy
+vagrant destroy -f
 cd ..
 rm -fr samplePokemon

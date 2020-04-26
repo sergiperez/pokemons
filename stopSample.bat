@@ -1,6 +1,6 @@
 cd samplePokemon
 vagrant halt
-vagrant -f destroy
+vagrant destroy -f
 cd ..
 rmdir /s /q samplePokemon
 

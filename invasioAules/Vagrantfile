@@ -29,6 +29,6 @@ Vagrant.configure("2") do |config|
     subconfig.vm.box = BOX
     subconfig.vm.network "private_network", ip: "192.168.10.2"
     subconfig.vm.synced_folder "vagrant_data", "/vagrant_data"
-    subconfig.vm.provision "shell", inline:"wget -q --no-check-certificate https://gist.githubusercontent.com/sergiperez/2156262d1fcdc1a6463be7558e04ecfc/raw/72117f625717515a50678807b39d0002a4d6719b/pikachu -O /etc/motd"
+    subconfig.vm.provision "shell", inline:"cp /vagrant_data/pikachu -O /etc/motd"
   end
 end
