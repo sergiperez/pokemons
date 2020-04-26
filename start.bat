@@ -6,8 +6,8 @@ vagrant box  add ubuntu/trusty64
 cd ..
 md vagrant_data
 copy ..\sample\pikachu vagrant_data\pikachu
-cp ..\sample\script.sh script.sh
-cp ..\sample\Vagrantfile Vagrantfile
+copy ..\sample\script.sh script.sh
+copy ..\sample\Vagrantfile Vagrantfile
 vagrant up
 cd vagrant_data
 del pikachu
