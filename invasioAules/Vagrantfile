@@ -18,6 +18,9 @@ Vagrant.configure("2") do |config|
   (0..(IP.count-1)).each do |i|
     config.vm.define "pk#{i}" do |subconfig|
       subconfig.vm.box = BOX
+      subconfig.vm.provider "virtualbox" do |v|
+         v.memory = 256
+      end      
       subconfig.vm.network "private_network", ip: IP[i], mac: MAC[i]
       subconfig.vm.provision "shell" do |s|
         s.path = "script.sh"
@@ -27,6 +30,9 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define "teamRocket" do |subconfig|
     subconfig.vm.box = BOX
+    subconfig.vm.provider "virtualbox" do |v|
+      v.memory = 256
+    end
     subconfig.vm.network "private_network", ip: "192.168.10.2"
     subconfig.vm.synced_folder "vagrant_data", "/vagrant_data"
     subconfig.vm.provision "shell", inline:"cp /vagrant_data/pikachu -O /etc/motd"
