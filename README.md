@@ -36,3 +36,4 @@ startSample.bat
 ```
 
 [Enunciat complet de l'activitat](https://docs.google.com/document/d/1l-bYDuX36Xezo3KtNIRWGQGdH0ll4x1YD2tuHaEjfvE/edit?usp=sharing)
+#FpInfor #Smx #SmxMp05 #SmxMp05Uf03
