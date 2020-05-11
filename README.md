@@ -26,11 +26,13 @@ Uns pokemons han invadit una màquina. Heu de:
    - Quin és el password de pikachu? Un bon profe de xarxes el sap, és el nostre clàssic password.
    
 Per començar amb l'exercici,accediu a la carpeta pokemons i feu:
-- Linux
+- Linux i MacOSX
 ```bash=
-./sample.sh
+./startSample.sh
 ```
 - Windows 
 ```batch=
-sample.bat
+startSample.bat
 ```
+
+[Enunciat complet de l'activitat](https://docs.google.com/document/d/1l-bYDuX36Xezo3KtNIRWGQGdH0ll4x1YD2tuHaEjfvE/edit?usp=sharing)
