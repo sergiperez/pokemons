@@ -1,7 +1,7 @@
 # Caça de pokemons
 
 ## Instal·lació
-- Heu de tenir isntal·lat el següent software
+- Heu de tenir instal·lat el següent software
     - Virtualbox
     - Vagrant
     - Git
